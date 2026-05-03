@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "outputDirectory": "aria-pro/build",
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/aria-pro/server/server.js"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/aria-pro/build/index.html"
+    }
+  ]
+}
