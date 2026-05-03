@@ -3,10 +3,14 @@ import fetch from 'node-fetch';
 export default class WebSearchService {
   constructor() {
     this.serpApiKey = process.env.SERPAPI_KEY;
-    this.geminiKey = process.env.GEMINI_API_KEY || 'AIzaSyCxQzJuTEcZJuyOHHn2Q3FJQIoM7mqyHQU';
+    this.geminiKey = process.env.GEMINI_API_KEY;
   }
 
   async getAIResponse(message) {
+    if (!this.geminiKey) {
+      throw new Error('GEMINI_API_KEY is missing from the server environment.');
+    }
+
     const res = await fetch(
       "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=" +
         this.geminiKey,
