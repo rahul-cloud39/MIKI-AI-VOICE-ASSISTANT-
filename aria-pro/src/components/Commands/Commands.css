@@ -1,0 +1,111 @@
+.commands-container {
+  position: relative;
+  overflow: hidden;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+  background:
+    linear-gradient(180deg, rgba(26, 35, 61, 0.94), rgba(13, 19, 37, 0.92));
+  color: #f4f7ff;
+  box-shadow:
+    0 20px 54px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(18px);
+}
+
+.commands-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(255, 122, 89, 0.1), transparent 30%, transparent 72%, rgba(104, 214, 226, 0.08));
+}
+
+.commands-container h3 {
+  position: relative;
+  margin: 0 0 16px;
+  font-size: 19px;
+}
+
+.commands-info,
+.command-section,
+.command-tips {
+  position: relative;
+  overflow: hidden;
+  margin: 14px 0;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(14px);
+}
+
+.commands-info p,
+.command-tips p {
+  margin: 0;
+  color: rgba(244, 247, 255, 0.88);
+  line-height: 1.65;
+}
+
+.commands-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.command-section h4 {
+  margin: 0 0 10px;
+  font-size: 15px;
+}
+
+.command-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.command-section li {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(244, 247, 255, 0.84);
+  line-height: 1.5;
+}
+
+.command-section li:last-child {
+  border-bottom: 0;
+}
+
+.command-input-section {
+  margin: 14px 0;
+}
+
+.command-input {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  background: rgba(7, 12, 24, 0.68);
+  color: #f4f7ff;
+  outline: none;
+}
+
+.command-input::placeholder {
+  color: rgba(244, 247, 255, 0.45);
+}
+
+.command-input:focus {
+  border-color: rgba(255, 122, 89, 0.42);
+  box-shadow: 0 0 0 4px rgba(255, 122, 89, 0.12);
+}
+
+.command-tips {
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .commands-container {
+    padding: 18px;
+    border-radius: 18px;
+  }
+}
