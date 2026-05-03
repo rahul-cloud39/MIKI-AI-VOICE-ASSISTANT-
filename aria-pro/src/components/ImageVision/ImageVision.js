@@ -8,7 +8,7 @@ export default function ImageVision({ onAnalysisComplete }) {
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
   const [error, setError] = useState('');
-  const apiBaseUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+  const apiBaseUrl = '';
 
   const readFileAsDataURL = (file) =>
     new Promise((resolve, reject) => {

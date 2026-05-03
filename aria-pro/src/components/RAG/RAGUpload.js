@@ -21,7 +21,7 @@ export default function RAGUpload({ onUploadSuccess, onQuery }) {
       reader.onload = async (event) => {
         const fileBase64 = event.target.result.split(',')[1];
 
-        const response = await fetch('http://localhost:5000/api/rag/upload', {
+        const response = await fetch('/api/rag/upload', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ file: fileBase64 })
@@ -45,7 +45,7 @@ export default function RAGUpload({ onUploadSuccess, onQuery }) {
 
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:5000/api/rag/query', {
+      const response = await fetch('/api/rag/query', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query, useRAG })
