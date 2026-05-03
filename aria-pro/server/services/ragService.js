@@ -1,5 +1,3 @@
-import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf.mjs';
-
 export default class RAGService {
   constructor() {
     this.documents = [];
@@ -36,6 +34,7 @@ export default class RAGService {
         throw new Error('No PDF data was provided.');
       }
 
+      const pdfjsLib = await import('pdfjs-dist/legacy/build/pdf.mjs');
       const pdfBuffer = Buffer.from(fileBase64, 'base64');
       const loadingTask = pdfjsLib.getDocument({ data: new Uint8Array(pdfBuffer) });
       const pdf = await loadingTask.promise;
