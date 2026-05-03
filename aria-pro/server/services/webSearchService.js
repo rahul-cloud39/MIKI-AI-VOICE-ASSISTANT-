@@ -26,6 +26,9 @@ export default class WebSearchService {
     );
 
     const data = await res.json();
+    if (!res.ok || !data.candidates?.[0]?.content?.parts?.[0]?.text) {
+      throw new Error(data.error?.message || 'Gemini API did not return a valid response. Check GEMINI_API_KEY in environment variables.');
+    }
     return data.candidates[0].content.parts[0].text;
   }
 
