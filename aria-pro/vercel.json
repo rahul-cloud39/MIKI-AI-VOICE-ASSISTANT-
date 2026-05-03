@@ -21,15 +21,15 @@
     },
     {
       "src": "/static/(.*)",
-      "dest": "/build/static/$1"
+      "dest": "/static/$1"
     },
     {
       "src": "/(.*\\.(js|css|png|jpg|jpeg|gif|svg|ico|json|txt|webmanifest))",
-      "dest": "/build/$1"
+      "dest": "/$1"
     },
     {
       "src": "/(.*)",
-      "dest": "/build/index.html"
+      "dest": "/index.html"
     }
   ]
 }
