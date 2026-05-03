@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "build": "npm --prefix aria-pro install && npm --prefix aria-pro run build",
+    "start": "npm --prefix aria-pro run start:server"
+  },
+  "engines": {
+    "node": "20.x"
+  }
+}
