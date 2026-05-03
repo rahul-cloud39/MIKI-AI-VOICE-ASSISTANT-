@@ -3,6 +3,13 @@
   "buildCommand": "npm run build",
   "builds": [
     {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
+    },
+    {
       "src": "server/server.js",
       "use": "@vercel/node"
     }
@@ -14,12 +21,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/server/server.js"
+      "dest": "/build/$1"
     }
-  ],
-  "functions": {
-    "server/server.js": {
-      "maxDuration": 30
-    }
-  }
+  ]
 }
