@@ -18,6 +18,7 @@ dotenv.config({ path: join(__dirname, '..', '.env'), override: false });
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+const HOST = process.env.HOST || '0.0.0.0';
 const buildPath = join(__dirname, '..', 'build');
 const hasBuild = existsSync(join(buildPath, 'index.html'));
 
@@ -96,6 +97,10 @@ if (hasBuild) {
   });
 }
 
-app.listen(PORT, () => {
-  console.log(`MIKI Server running on http://localhost:${PORT}`);
-});
+if (process.env.VERCEL !== '1') {
+  app.listen(PORT, HOST, () => {
+    console.log(`MIKI Server running on http://${HOST}:${PORT}`);
+  });
+}
+
+export default app;
